@@ -46,17 +46,17 @@ export async function HeroSection() {
             MSM conçoit des solutions de gestion qui fonctionnent partout — même sans internet,
             cellulaire ou électricité. Simplifiez les affaires compliquées.
           </p>
-          <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 rounded-md bg-msm-gold px-6 py-3.5 text-sm font-semibold text-msm-navy transition hover:bg-msm-gold-light"
+              className="inline-flex items-center justify-center gap-1.5 rounded-md border border-msm-gold/40 px-5 py-2.5 text-sm font-medium text-msm-gold transition hover:border-msm-gold/60 hover:bg-msm-gold/10"
             >
               Demander une démo
-              <ArrowRight className="h-4 w-4" />
+              <ArrowRight className="h-3.5 w-3.5 opacity-70" />
             </Link>
             <Link
               href="/solutions/organic"
-              className="inline-flex items-center justify-center rounded-md border border-white/25 px-6 py-3.5 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/5"
+              className="inline-flex items-center justify-center rounded-md px-5 py-2.5 text-sm font-medium text-white/70 transition hover:text-white"
             >
               Découvrir nos solutions
             </Link>

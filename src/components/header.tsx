@@ -93,7 +93,7 @@ export function Header() {
           </a>
           <Link
             href="/contact"
-            className="rounded-md bg-msm-gold px-5 py-2 text-sm font-semibold text-msm-navy transition hover:bg-msm-gold-light"
+            className="rounded-md border border-white/25 px-4 py-1.5 text-sm font-medium text-white/85 transition hover:border-white/40 hover:bg-white/5 hover:text-white"
           >
             Nous contacter
           </Link>
@@ -170,7 +170,7 @@ export function Header() {
             </a>
             <Link
               href="/contact"
-              className="block rounded-md bg-msm-gold px-4 py-3.5 text-center text-base font-semibold text-msm-navy transition hover:bg-msm-gold-light"
+              className="block rounded-md border border-white/20 px-4 py-3 text-center text-sm font-medium text-white/85 transition hover:border-white/35 hover:bg-white/5 hover:text-white"
               onClick={() => setMobileOpen(false)}
             >
               Nous contacter
