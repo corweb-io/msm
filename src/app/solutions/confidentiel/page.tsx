@@ -40,21 +40,21 @@ export default function ConfidentielPage() {
       <PageHeader
         eyebrow="Solution"
         title="MSM-CONFIDENTIEL®"
-        description="La confidentialité est un droit. Protégez vos données sans mesures compliquées — base intelligente dotée d'une connexion chiffrée."
-        image={{ src: productImages.confidentiel, alt: "MSM-CONFIDENTIEL" }}
+        description="La confidentialité est un droit. Protégez et contrôlez vos données d'entreprise sans complexité — base intelligente, connexion et réseau chiffrés."
+        image={{ src: productImages.confidentiel, alt: "Protection et chiffrement des données" }}
       />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ImageFeature
-            src={productImages.central}
-            alt="Infrastructure centralisée et sécurisée"
+            src={productImages.confidentiel}
+            alt="Sécurité et chiffrement des données d'entreprise"
           >
             <p className="text-base leading-relaxed text-msm-muted">
               Souvenez-vous des gros titres annonçant la perte ou le vol de milliers de données.
-              MSM-CONFIDENTIEL® est une base confidentielle pour des données confidentielles. Elle
-              s&apos;installe sur tous types d&apos;ordinateurs et serveurs Microsoft© pour garantir un niveau
-              de confidentialité presque absolu.
+              MSM-CONFIDENTIEL® est une base pour données confidentielles : elle s&apos;installe sur
+              postes et serveurs Microsoft© pour un niveau de confidentialité presque absolu —
+              communications et données protégées, où que vous soyez.
             </p>
             <div className="mt-10 grid gap-5 sm:grid-cols-2">
               {pillars.map((pillar) => (

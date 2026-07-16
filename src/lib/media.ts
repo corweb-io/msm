@@ -1,4 +1,9 @@
-/** Marketing photography adapted from the Nutrisoft sibling project. */
+/**
+ * Marketing photography.
+ * Sector/region assets adapted from the Nutrisoft sibling project.
+ * Product & page imagery from Unsplash/Pexels (free commercial license).
+ * BacTrack imagery from the original MSM Environnementale microsite (© MSM).
+ */
 
 export const sectors = [
   {
@@ -49,21 +54,56 @@ export const regions = [
   { id: "gaspesie", title: "Gaspésie", image: "/images/regions/region_gaspesie.jpg" },
 ] as const;
 
+/** One atmosphere photo per product module */
 export const productImages = {
-  central: "/images/products/software_central.jpg",
-  organic: "/images/products/software_organic.jpg",
-  route: "/images/products/software_route.jpg",
-  comptoir: "/images/products/software_comptoir.jpg",
-  kiosk: "/images/products/software_kiosque.jpg",
-  xero: "/images/products/software_xero.jpg",
-  custom: "/images/products/software_custom.jpg",
-  entreprise: "/images/products/software_organic.jpg",
-  confidentiel: "/images/products/software_central.jpg",
+  central: "/images/content/central-servers.jpg",
+  organic: "/images/content/organic-inventory.jpg",
+  route: "/images/content/route-delivery.jpg",
+  comptoir: "/images/content/comptoir-pos.jpg",
+  kiosk: "/images/content/kiosk-market.jpg",
+  xero: "/images/content/xero-payment.jpg",
+  entreprise: "/images/content/entreprise-portable.jpg",
+  confidentiel: "/images/content/confidentiel-lock.jpg",
 } as const;
 
+/** Solution hub / homepage cards */
 export const solutionImages = {
   organic: productImages.organic,
-  iaa: productImages.route,
+  iaa: "/images/content/iaa-tablet.png",
   confidentiel: productImages.confidentiel,
-  bactrack: productImages.custom,
+  bactrack: "/images/content/bactrack-street.jpg",
+} as const;
+
+/** Original MSM Environnementale / BacTrack assets */
+export const bactrackImages = {
+  hero: "/images/content/bactrack-hero.png",
+  street: "/images/content/bactrack-street.jpg",
+  sensor: "/images/content/bactrack-sensor.jpg",
+  system: "/images/content/bactrack-system.jpg",
+  hardware: "/images/content/bactrack-hardware.jpg",
+} as const;
+
+/** Original MSM IAA landing-page hardware assets */
+export const iaaImages = {
+  milstd: "/images/content/iaa-milstd.png",
+  ip54: "/images/content/iaa-ip54.png",
+  tablet: "/images/content/iaa-tablet.png",
+  dashboard: "/images/content/iaa-dashboard.png",
+  handle: "/images/content/iaa-handle.png",
+  keyboard: "/images/content/iaa-keyboard.png",
+  scanner: "/images/content/iaa-scanner.png",
+  bakery: "/images/content/iaa-bakery.jpg",
+} as const;
+
+/** Page-level photography (headers & feature sections) */
+export const pageImages = {
+  aboutHero: regions[0].image,
+  aboutSide: "/images/content/about-agriculture.jpg",
+  careers: "/images/content/careers-team.jpg",
+  contact: "/images/content/contact-phone.jpg",
+  support: "/images/content/support-headset.jpg",
+  tarifs: "/images/content/tarifs-analytics.jpg",
+  solutions: productImages.organic,
+  produits: productImages.central,
+  iaaBakery: iaaImages.bakery,
 } as const;

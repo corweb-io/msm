@@ -14,11 +14,12 @@ export const metadata: Metadata = {
 
 const features = [
   "Facturation et gestion des stocks",
-  "Rapports comptables personnalisables",
+  "Rapports comptables personnalisables — ou créés sur mesure",
   "Multi-société et multi-usager",
-  "Import/export de données existantes",
+  "Import/export de vos données existantes",
   "Installation sur PC, réseau ou nuage",
-  "Formation incluse en standard",
+  "Base de données chiffrée et exportable",
+  "Formation, support et mises à jour inclus",
 ];
 
 export default function OrganicPage() {
@@ -35,7 +36,7 @@ export default function OrganicPage() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <ImageFeature
             src={productImages.organic}
-            alt="Dirigeant utilisant MSM-ORGANIC sur le terrain"
+            alt="Gestion d'inventaire et d'entrepôt avec MSM-ORGANIC"
           >
             <h2 className="text-xl font-semibold text-msm-navy">Pourquoi choisir MSM-ORGANIC ?</h2>
             <ul className="mt-6 space-y-3">

@@ -3,7 +3,7 @@ import { Headphones, MessageSquare, Phone, Wrench } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
 import { site } from "@/lib/content";
-import { productImages } from "@/lib/media";
+import { pageImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Support technique",
@@ -38,7 +38,7 @@ export default function SupportPage() {
         eyebrow="Support"
         title="Support technique gratuit"
         description="Depuis toujours, MSM assure un support technique de qualité. Un outil de diagnostic signale automatiquement les problèmes."
-        image={{ src: productImages.central, alt: "Support technique MSM" }}
+        image={{ src: pageImages.support, alt: "Équipe de support technique MSM" }}
       />
 
       <section className="py-16 sm:py-20">

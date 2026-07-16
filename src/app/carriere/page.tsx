@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Briefcase, Clock, GraduationCap, Heart, Home } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
-import { productImages } from "@/lib/media";
+import { pageImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Carrière",
@@ -25,7 +25,7 @@ export default function CarrierePage() {
         eyebrow="Carrière"
         title="Simplifier les affaires compliquées"
         description="Chez MSM, nous n'aimons pas la complexité. Votre défi : simplifier les affaires compliquées."
-        image={{ src: productImages.xero, alt: "Équipe MSM" }}
+        image={{ src: pageImages.careers, alt: "Équipe MSM en collaboration" }}
       />
 
       <section className="py-16 sm:py-20">
@@ -33,8 +33,8 @@ export default function CarrierePage() {
           <div className="grid items-center gap-10 lg:grid-cols-12">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:col-span-5">
               <Image
-                src={productImages.xero}
-                alt="Environnement de travail MSM"
+                src={pageImages.careers}
+                alt="Équipe MSM en collaboration"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"

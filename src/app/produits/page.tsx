@@ -28,7 +28,7 @@ export default function ProduitsPage() {
           <div className="grid gap-5 sm:grid-cols-2">
             {products.map((product) => {
               const image =
-                productImages[product.id as keyof typeof productImages] ?? productImages.custom;
+                productImages[product.id as keyof typeof productImages] ?? productImages.central;
               return (
                 <div
                   key={product.id}

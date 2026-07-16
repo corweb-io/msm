@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
-import { solutionImages } from "@/lib/media";
+import { pageImages, solutionImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Solutions",
@@ -26,7 +26,7 @@ const solutions = [
     description:
       "Production, vente et distribution pour l'industrie agroalimentaire — conçu pour les régions éloignées sans connectivité.",
     image: solutionImages.iaa,
-    imageAlt: "Distribution agroalimentaire hors réseau",
+    imageAlt: "Tablette robuste pour l'agroalimentaire hors réseau",
   },
   {
     title: "Sécurité des données",
@@ -34,7 +34,7 @@ const solutions = [
     description:
       "MSM-CONFIDENTIEL : base de données, connexion et réseau chiffrés pour protéger les données sensibles de votre entreprise.",
     image: solutionImages.confidentiel,
-    imageAlt: "Sécurité et chiffrement des données",
+    imageAlt: "Chiffrement et protection des données",
   },
   {
     title: "Solution environnementale",
@@ -42,7 +42,7 @@ const solutions = [
     description:
       "BacTrack® : gestion intelligente des bacs de recyclage avec RFID, géolocalisation, pesage et facturation automatisée.",
     image: solutionImages.bactrack,
-    imageAlt: "BacTrack gestion environnementale",
+    imageAlt: "BacTrack — bacs et capteurs MSM",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function SolutionsPage() {
         eyebrow="Solutions"
         title="Des logiciels pour chaque défi"
         description="MSM offre des solutions novatrices qui réunissent produits, logiciels et services pour répondre à vos besoins uniques."
-        image={{ src: solutionImages.organic, alt: "Solutions MSM" }}
+        image={{ src: pageImages.solutions, alt: "Solutions MSM" }}
       />
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">

@@ -159,22 +159,71 @@ export const industries = [
   "Distribution (DSD)",
 ] as const;
 
+/** Certified reseller / technology partners. Set `logo` to a path under public/ when assets are ready. */
+export const partners: readonly {
+  id: string;
+  name: string;
+  fullName: string;
+  role: string;
+  description: string;
+  logo: string | null;
+}[] = [
+  {
+    id: "zebra",
+    name: "Zebra",
+    fullName: "Zebra Technologies",
+    role: "Revendeur certifié",
+    description:
+      "Matériel d'identification et de mobilité — lecteurs, imprimantes et terminaux pour le terrain.",
+    logo: null,
+  },
+  {
+    id: "global-payments",
+    name: "Global Payments",
+    fullName: "Global Payments",
+    role: "Revendeur certifié",
+    description:
+      "Solutions de paiement pour encaisser en ligne et en point de service.",
+    logo: null,
+  },
+];
+
 export const faqOrganic = [
+  {
+    q: "À qui s'adresse MSM-ORGANIC ?",
+    a: "Aux dirigeants et gestionnaires qui veulent une gestion simple et performante — de 1 à 2 500 employés, sur un ou plusieurs postes, avec ou sans réseau.",
+  },
   {
     q: "Quel gain de temps puis-je attendre ?",
     a: "Nos clients rapportent généralement un facteur de 5 à 10 — réalisez en 1 jour ce qui demandait 5 à 10 jours auparavant.",
   },
   {
-    q: "La formation et le support sont-ils vraiment gratuits ?",
-    a: "Oui. L'installation, la formation, le support technique et les mises à jour sont inclus sans frais supplémentaires.",
+    q: "Tout est-il vraiment livré en standard ?",
+    a: "Oui. Facturation, inventaire, commandes, rapports comptables — tous les modules sont inclus, sans extras à payer.",
+  },
+  {
+    q: "La formation et le support sont-ils gratuits ?",
+    a: "Oui. Installation, formation, support technique et mises à jour sont inclus. Une semaine suffit en général pour se former.",
   },
   {
     q: "Puis-je migrer depuis un autre logiciel ?",
-    a: "Oui. MSM supporte tous les standards informatiques (import/export) pour récupérer vos données existantes.",
+    a: "Oui. MSM-ORGANIC supporte les standards d'import/export pour récupérer vos données existantes.",
+  },
+  {
+    q: "Mes données sont-elles protégées et exportables ?",
+    a: "La base est chiffrée. Vous pouvez exporter vos données librement, quel que soit le nombre d'usagers ou de bases.",
+  },
+  {
+    q: "Puis-je l'installer sans infrastructure réseau ?",
+    a: "Oui — sur un simple poste de travail, en réseau interne ou externe, ou en nuage pour y accéder où que vous soyez.",
+  },
+  {
+    q: "Quels types de rapports puis-je produire ?",
+    a: "Clients, fournisseurs, stocks, comptabilité… et si un rapport n'existe pas, nous pouvons le créer — voire un module sur mesure.",
   },
   {
     q: "J'ai une entreprise saisonnière — quelles options ai-je ?",
-    a: "L'abonnement mensuel permet de vous désabonner durant les périodes creuses et de reprendre sans perdre vos données.",
+    a: "L'abonnement mensuel permet de vous désabonner en période creuse et de reprendre sans perdre vos données. Vos données vous appartiennent.",
   },
 ] as const;
 

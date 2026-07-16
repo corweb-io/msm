@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
 import { pricingPlans, site } from "@/lib/content";
-import { productImages } from "@/lib/media";
+import { pageImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Tarifs",
@@ -27,7 +27,7 @@ export default function TarifsPage() {
         eyebrow="Tarifs"
         title="Transparent et tout inclus"
         description="Pas de surprise, ni d'extra à payer. Choisissez le forfait adapté à votre rythme d'activité."
-        image={{ src: productImages.organic, alt: "Tarification MSM" }}
+        image={{ src: pageImages.tarifs, alt: "Analyses et tarification MSM" }}
       />
 
       <section className="py-16 sm:py-20">

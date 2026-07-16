@@ -3,9 +3,10 @@ import Image from "next/image";
 import { FalconWatermark } from "@/components/falcon-watermark";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
+import { PartnersStrip } from "@/components/partners-strip";
 import { RegionStrip } from "@/components/region-strip";
 import { site } from "@/lib/content";
-import { productImages, regions } from "@/lib/media";
+import { pageImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "À propos",
@@ -19,7 +20,7 @@ export default function AboutPage() {
         eyebrow="À propos"
         title="Mot du président"
         description="Bienvenue chez MSM, 100 % québécois et indépendant depuis 1998."
-        image={{ src: regions[0].image, alt: "Présence MSM au Québec" }}
+        image={{ src: pageImages.aboutHero, alt: "Présence MSM au Québec" }}
       />
 
       <section className="py-16 sm:py-20">
@@ -27,7 +28,7 @@ export default function AboutPage() {
           <div className="grid items-start gap-10 lg:grid-cols-12">
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl lg:col-span-5">
               <Image
-                src={productImages.organic}
+                src={pageImages.aboutSide}
                 alt="MSM — logiciels conçus pour le terrain québécois"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
@@ -80,6 +81,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <PartnersStrip variant="featured" />
 
       <RegionStrip
         eyebrow="Notre terrain"

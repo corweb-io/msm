@@ -7,6 +7,7 @@ import { ProductHub } from "@/components/product-hub";
 import { RegionStrip } from "@/components/region-strip";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { SectorGrid } from "@/components/sector-grid";
+import { PartnersStrip } from "@/components/partners-strip";
 import { StatsStrip } from "@/components/stats-strip";
 import { industries, valueProps } from "@/lib/content";
 import { solutionImages } from "@/lib/media";
@@ -18,7 +19,7 @@ const solutionCards = [
     href: "/solutions/organic",
     icon: Wheat,
     image: solutionImages.organic,
-    imageAlt: "Gestion d'entreprise sur le terrain",
+    imageAlt: "Gestion d'inventaire et d'entrepôt",
   },
   {
     title: "Agroalimentaire (IAA)",
@@ -26,7 +27,7 @@ const solutionCards = [
     href: "/solutions/iaa",
     icon: Truck,
     image: solutionImages.iaa,
-    imageAlt: "Distribution agroalimentaire sur route",
+    imageAlt: "Tablette robuste pour la distribution IAA",
   },
   {
     title: "Sécurité des données",
@@ -34,7 +35,7 @@ const solutionCards = [
     href: "/solutions/confidentiel",
     icon: Shield,
     image: solutionImages.confidentiel,
-    imageAlt: "Infrastructure de données sécurisée",
+    imageAlt: "Sécurité et chiffrement des données",
   },
   {
     title: "Solution environnementale",
@@ -42,7 +43,7 @@ const solutionCards = [
     href: "/solutions/bactrack",
     icon: Recycle,
     image: solutionImages.bactrack,
-    imageAlt: "Solution environnementale BacTrack",
+    imageAlt: "BacTrack — collecte municipale intelligente",
   },
 ];
 
@@ -53,6 +54,7 @@ export default function HomePage() {
     <>
       <HeroSection />
       <StatsStrip />
+      <PartnersStrip />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
