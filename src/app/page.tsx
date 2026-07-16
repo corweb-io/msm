@@ -1,11 +1,15 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Truck, Wheat, Shield, Recycle } from "lucide-react";
 import { CTASection } from "@/components/cta-section";
 import { HeroSection } from "@/components/hero-section";
 import { ProductHub } from "@/components/product-hub";
+import { RegionStrip } from "@/components/region-strip";
 import { SectionEyebrow } from "@/components/section-eyebrow";
+import { SectorGrid } from "@/components/sector-grid";
 import { StatsStrip } from "@/components/stats-strip";
 import { industries, valueProps } from "@/lib/content";
+import { solutionImages } from "@/lib/media";
 
 const solutionCards = [
   {
@@ -13,28 +17,32 @@ const solutionCards = [
     description: "Facturation, inventaire, commandes et rapports — tout inclus, sans module caché.",
     href: "/solutions/organic",
     icon: Wheat,
-    accent: "from-msm-gold/20 to-transparent",
+    image: solutionImages.organic,
+    imageAlt: "Gestion d'entreprise sur le terrain",
   },
   {
     title: "Agroalimentaire (IAA)",
     description: "Production et distribution hors réseau pour les régions éloignées et l'agriculture.",
     href: "/solutions/iaa",
     icon: Truck,
-    accent: "from-emerald-900/10 to-transparent",
+    image: solutionImages.iaa,
+    imageAlt: "Distribution agroalimentaire sur route",
   },
   {
     title: "Sécurité des données",
     description: "Base de données, connexion et réseau chiffrés pour une confidentialité maximale.",
     href: "/solutions/confidentiel",
     icon: Shield,
-    accent: "from-msm-navy/10 to-transparent",
+    image: solutionImages.confidentiel,
+    imageAlt: "Infrastructure de données sécurisée",
   },
   {
     title: "Solution environnementale",
     description: "BacTrack® — gestion intelligente des bacs avec RFID, pesage et facturation automatisée.",
     href: "/solutions/bactrack",
     icon: Recycle,
-    accent: "from-green-900/10 to-transparent",
+    image: solutionImages.bactrack,
+    imageAlt: "Solution environnementale BacTrack",
   },
 ];
 
@@ -77,7 +85,7 @@ export default function HomePage() {
             <div className="max-w-xl">
               <SectionEyebrow>Solutions</SectionEyebrow>
               <h2 className="font-display mt-4 text-3xl tracking-tight text-msm-navy sm:text-4xl">
-                Nos domaines d'expertise
+                Nos domaines d&apos;expertise
               </h2>
               <p className="mt-3 text-sm leading-relaxed text-msm-muted sm:text-base">
                 Des logiciels clé en main pour la production, la vente, la distribution et la livraison.
@@ -95,34 +103,58 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 lg:grid-cols-12">
             <Link
               href={solutionCards[0].href}
-              className={`group relative col-span-full overflow-hidden rounded-2xl border border-msm-border bg-gradient-to-br ${solutionCards[0].accent} p-8 transition hover:border-msm-gold/40 hover:shadow-lg lg:col-span-7`}
+              className="group relative col-span-full overflow-hidden rounded-2xl border border-msm-border lg:col-span-7"
             >
-              <FeaturedIcon className="h-8 w-8 text-msm-gold" />
-              <h3 className="mt-6 text-2xl font-semibold text-msm-navy">{solutionCards[0].title}</h3>
-              <p className="mt-3 max-w-md text-sm leading-relaxed text-msm-muted">
-                {solutionCards[0].description}
-              </p>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-msm-gold">
-                En savoir plus
-                <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-              </span>
+              <div className="relative min-h-[280px] sm:min-h-[320px]">
+                <Image
+                  src={solutionCards[0].image}
+                  alt={solutionCards[0].imageAlt}
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 58vw"
+                  className="object-cover transition duration-700 group-hover:scale-[1.03]"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-msm-navy via-msm-navy/55 to-msm-navy/15" />
+                <div className="absolute inset-0 flex flex-col justify-end p-8">
+                  <FeaturedIcon className="h-8 w-8 text-msm-gold" />
+                  <h3 className="mt-4 text-2xl font-semibold text-white">{solutionCards[0].title}</h3>
+                  <p className="mt-2 max-w-md text-sm leading-relaxed text-white/75">
+                    {solutionCards[0].description}
+                  </p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-msm-gold">
+                    En savoir plus
+                    <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+                  </span>
+                </div>
+              </div>
             </Link>
 
             <div className="col-span-full grid gap-5 sm:grid-cols-3 lg:col-span-5 lg:grid-cols-1">
               {solutionCards.slice(1).map((card) => {
                 const Icon = card.icon;
                 return (
-                <Link
-                  key={card.href}
-                  href={card.href}
-                  className={`group relative overflow-hidden rounded-xl border border-msm-border bg-gradient-to-br ${card.accent} p-5 transition hover:border-msm-gold/40 hover:shadow-md`}
-                >
-                  <Icon className="h-5 w-5 text-msm-navy/70 transition group-hover:text-msm-gold" />
-                  <h3 className="mt-3 text-base font-semibold text-msm-navy">{card.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-msm-muted line-clamp-2">
-                    {card.description}
-                  </p>
-                </Link>
+                  <Link
+                    key={card.href}
+                    href={card.href}
+                    className="group relative overflow-hidden rounded-xl border border-msm-border"
+                  >
+                    <div className="relative min-h-[120px] sm:min-h-[110px] lg:min-h-[108px]">
+                      <Image
+                        src={card.image}
+                        alt={card.imageAlt}
+                        fill
+                        sizes="(max-width: 1024px) 33vw, 40vw"
+                        className="object-cover transition duration-500 group-hover:scale-[1.04]"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-r from-msm-navy/90 via-msm-navy/75 to-msm-navy/35" />
+                      <div className="absolute inset-0 flex flex-col justify-center p-5">
+                        <Icon className="h-5 w-5 text-msm-gold transition group-hover:text-msm-gold-light" />
+                        <h3 className="mt-2 text-base font-semibold text-white">{card.title}</h3>
+                        <p className="mt-1 text-xs leading-relaxed text-white/65 line-clamp-2">
+                          {card.description}
+                        </p>
+                      </div>
+                    </div>
+                  </Link>
                 );
               })}
             </div>
@@ -132,7 +164,15 @@ export default function HomePage() {
 
       <ProductHub />
 
-      <section className="py-16 sm:py-20">
+      <RegionStrip />
+
+      <SectorGrid
+        eyebrow="Agroalimentaire"
+        title="Du champ à la livraison"
+        description="MSM équipe producteurs, transformateurs et distributeurs avec des outils adaptés à chaque maillon de la chaîne."
+      />
+
+      <section className="pb-16 sm:pb-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="rounded-2xl border border-msm-border bg-msm-navy p-8 sm:p-10">
             <div className="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">

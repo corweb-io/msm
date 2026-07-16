@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Check } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
+import { ImageFeature } from "@/components/image-feature";
 import { faqOrganic, industries, pricingPlans } from "@/lib/content";
+import { productImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Gestion d'entreprise",
@@ -26,23 +28,25 @@ export default function OrganicPage() {
         eyebrow="Solution"
         title="Logiciel de gestion d'entreprise"
         description="MSM-ORGANIC offre une gestion simple et ultra performante pour dirigeants et gestionnaires. Tous les modules livrés en standard — pas de surprise, ni d'extra à payer."
+        image={{ src: productImages.organic, alt: "MSM-ORGANIC" }}
       />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <div className="grid gap-12 lg:grid-cols-2">
-            <div>
-              <h2 className="text-xl font-semibold text-msm-navy">Pourquoi choisir MSM-ORGANIC ?</h2>
-              <ul className="mt-6 space-y-3">
-                {features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-3 text-sm text-msm-muted">
-                    <Check className="mt-0.5 h-4 w-4 shrink-0 text-msm-gold" />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-2xl border border-msm-border bg-white p-6">
+          <ImageFeature
+            src={productImages.organic}
+            alt="Dirigeant utilisant MSM-ORGANIC sur le terrain"
+          >
+            <h2 className="text-xl font-semibold text-msm-navy">Pourquoi choisir MSM-ORGANIC ?</h2>
+            <ul className="mt-6 space-y-3">
+              {features.map((feature) => (
+                <li key={feature} className="flex items-start gap-3 text-sm text-msm-muted">
+                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-msm-gold" />
+                  {feature}
+                </li>
+              ))}
+            </ul>
+            <div className="mt-8 rounded-2xl border border-msm-border bg-white p-6">
               <h3 className="text-lg font-semibold text-msm-navy">Secteurs desservis</h3>
               <div className="mt-4 flex flex-wrap gap-2">
                 {industries.map((industry) => (
@@ -56,7 +60,7 @@ export default function OrganicPage() {
                 tailles, avec ou sans réseau.
               </p>
             </div>
-          </div>
+          </ImageFeature>
         </div>
       </section>
 

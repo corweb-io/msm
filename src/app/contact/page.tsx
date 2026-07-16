@@ -5,6 +5,7 @@ import { useActionState } from "react";
 import { PageHeader } from "@/components/page-header";
 import { site } from "@/lib/content";
 import { initialContactFormState } from "@/lib/contact-form";
+import { productImages } from "@/lib/media";
 import { sendContactMessage } from "./actions";
 
 export default function ContactPage() {
@@ -16,6 +17,7 @@ export default function ContactPage() {
         eyebrow="Contact"
         title="Contactez-nous"
         description="Demandez une démo, posez vos questions ou discutez de vos projets avec notre équipe."
+        image={{ src: productImages.route, alt: "Contactez MSM" }}
       />
 
       <section className="py-16 sm:py-20">

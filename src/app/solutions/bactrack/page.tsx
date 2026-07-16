@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { MapPin, Scale, ScanLine, Video, Weight } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
+import { ImageFeature } from "@/components/image-feature";
+import { productImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Solution environnementale",
@@ -46,9 +48,48 @@ export default function BacTrackPage() {
         eyebrow="Solution"
         title="BacTrack® — Villes intelligentes"
         description="La gestion des bacs de recyclage (vert, bleu, noir) est complexe pour les villes. MSM offre aux municipalités une solution simple pour réduire les coûts et optimiser la gestion des matières recyclables."
+        image={{ src: productImages.custom, alt: "BacTrack villes intelligentes" }}
       />
 
       <section className="py-16 sm:py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <ImageFeature
+            src={productImages.custom}
+            alt="Technologie terrain pour la collecte intelligente"
+          >
+            <h2 className="text-xl font-semibold text-msm-navy">Collecte intelligente</h2>
+            <p className="mt-4 text-sm leading-relaxed text-msm-muted">
+              Une plate-forme intégrée qui connecte identification RFID, géolocalisation, pesage et
+              facturation — pour une gestion équitable et écologique des matières recyclables.
+            </p>
+            <div className="mt-8 space-y-5">
+              <div>
+                <h3 className="text-sm font-semibold text-msm-gold">RFID</h3>
+                <p className="mt-2 text-sm leading-relaxed text-msm-muted">
+                  Une puce RFID sur chaque bac permet de l&apos;identifier. Chaque vidange est comptabilisée
+                  automatiquement. Moins vous jetez, plus vous gagnez.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-msm-gold">Plate-forme intégrée</h3>
+                <p className="mt-2 text-sm leading-relaxed text-msm-muted">
+                  La plate-forme MSM connecte tous vos processus de recyclage avec un soutien spécifique
+                  pour diverses opérations.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-msm-gold">Tarification équitable</h3>
+                <p className="mt-2 text-sm leading-relaxed text-msm-muted">
+                  Tarification selon la taille du bac, la fréquence des collectes et le poids — prenant
+                  en compte les efforts des usagers pour réduire l&apos;empreinte écologique.
+                </p>
+              </div>
+            </div>
+          </ImageFeature>
+        </div>
+      </section>
+
+      <section className="border-y border-msm-border bg-white py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {features.map((feature) => (
@@ -60,35 +101,6 @@ export default function BacTrackPage() {
                 <p className="mt-2 text-sm leading-relaxed text-msm-muted">{feature.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-msm-border bg-white py-16 sm:py-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <h2 className="text-2xl font-semibold text-msm-navy">Collecte intelligente</h2>
-          <div className="mt-8 grid gap-8 lg:grid-cols-3">
-            <div>
-              <h3 className="text-sm font-semibold text-msm-gold">RFID</h3>
-              <p className="mt-2 text-sm leading-relaxed text-msm-muted">
-                Une puce RFID sur chaque bac permet de l'identifier. Chaque vidange est comptabilisée
-                automatiquement. Moins vous jetez, plus vous gagnez.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-msm-gold">Plate-forme intégrée</h3>
-              <p className="mt-2 text-sm leading-relaxed text-msm-muted">
-                La plate-forme MSM connecte tous vos processus de recyclage avec un soutien spécifique
-                pour diverses opérations.
-              </p>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-msm-gold">Tarification équitable</h3>
-              <p className="mt-2 text-sm leading-relaxed text-msm-muted">
-                Tarification selon la taille du bac, la fréquence des collectes et le poids — prenant
-                en compte les efforts des usagers pour réduire l'empreinte écologique.
-              </p>
-            </div>
           </div>
         </div>
       </section>

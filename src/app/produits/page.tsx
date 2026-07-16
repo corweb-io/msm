@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
 import { ProductHub } from "@/components/product-hub";
 import { products } from "@/lib/content";
+import { productImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Produits",
@@ -16,6 +18,7 @@ export default function ProduitsPage() {
         eyebrow="Produits"
         title="Suite de logiciels intégrée"
         description="MSM-CENTRAL est le cœur du système. Combinez les modules selon vos besoins pour une solution optimale en production, vente, distribution et livraison."
+        image={{ src: productImages.central, alt: "Suite logicielle MSM" }}
       />
 
       <ProductHub />
@@ -23,16 +26,32 @@ export default function ProduitsPage() {
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
           <div className="grid gap-5 sm:grid-cols-2">
-            {products.map((product) => (
-              <div
-                key={product.id}
-                className="group rounded-xl border border-msm-border bg-white p-6 transition hover:border-msm-gold/30 hover:shadow-md"
-              >
-                <span className="font-product text-sm font-semibold text-msm-navy">{product.name}</span>
-                <p className="mt-1 text-sm font-medium text-msm-gold">{product.tagline}</p>
-                <p className="mt-4 text-sm leading-relaxed text-msm-muted">{product.description}</p>
-              </div>
-            ))}
+            {products.map((product) => {
+              const image =
+                productImages[product.id as keyof typeof productImages] ?? productImages.custom;
+              return (
+                <div
+                  key={product.id}
+                  className="group overflow-hidden rounded-xl border border-msm-border bg-white transition hover:border-msm-gold/30 hover:shadow-md"
+                >
+                  <div className="relative aspect-[16/9] overflow-hidden">
+                    <Image
+                      src={image}
+                      alt={product.name}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 50vw"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 h-1 bg-msm-gold" />
+                  </div>
+                  <div className="p-6">
+                    <span className="font-product text-sm font-semibold text-msm-navy">{product.name}</span>
+                    <p className="mt-1 text-sm font-medium text-msm-gold">{product.tagline}</p>
+                    <p className="mt-4 text-sm leading-relaxed text-msm-muted">{product.description}</p>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="msm-grain relative mt-12 overflow-hidden rounded-2xl bg-msm-navy p-6 sm:p-8">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,149,46,0.1)_0%,_transparent_60%)]" />

@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Lock, Server, Shield, Wifi } from "lucide-react";
 import { PageHeader } from "@/components/page-header";
 import { CTASection } from "@/components/cta-section";
+import { ImageFeature } from "@/components/image-feature";
 import { site } from "@/lib/content";
+import { productImages } from "@/lib/media";
 
 export const metadata: Metadata = {
   title: "Sécurité des données",
@@ -39,27 +41,33 @@ export default function ConfidentielPage() {
         eyebrow="Solution"
         title="MSM-CONFIDENTIEL®"
         description="La confidentialité est un droit. Protégez vos données sans mesures compliquées — base intelligente dotée d'une connexion chiffrée."
+        image={{ src: productImages.confidentiel, alt: "MSM-CONFIDENTIEL" }}
       />
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6">
-          <p className="max-w-3xl text-base leading-relaxed text-msm-muted">
-            Souvenez-vous des gros titres annonçant la perte ou le vol de milliers de données.
-            MSM-CONFIDENTIEL® est une base confidentielle pour des données confidentielles. Elle
-            s'installe sur tous types d'ordinateurs et serveurs Microsoft© pour garantir un niveau
-            de confidentialité presque absolu.
-          </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2">
-            {pillars.map((pillar) => (
-              <div key={pillar.title} className="rounded-2xl border border-msm-border bg-white p-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-msm-navy/5 text-msm-navy">
-                  <pillar.icon className="h-5 w-5" />
+          <ImageFeature
+            src={productImages.central}
+            alt="Infrastructure centralisée et sécurisée"
+          >
+            <p className="text-base leading-relaxed text-msm-muted">
+              Souvenez-vous des gros titres annonçant la perte ou le vol de milliers de données.
+              MSM-CONFIDENTIEL® est une base confidentielle pour des données confidentielles. Elle
+              s&apos;installe sur tous types d&apos;ordinateurs et serveurs Microsoft© pour garantir un niveau
+              de confidentialité presque absolu.
+            </p>
+            <div className="mt-10 grid gap-5 sm:grid-cols-2">
+              {pillars.map((pillar) => (
+                <div key={pillar.title} className="rounded-2xl border border-msm-border bg-white p-5">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-msm-navy/5 text-msm-navy">
+                    <pillar.icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-3 text-base font-semibold text-msm-navy">{pillar.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-msm-muted">{pillar.description}</p>
                 </div>
-                <h3 className="mt-4 text-lg font-semibold text-msm-navy">{pillar.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-msm-muted">{pillar.description}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          </ImageFeature>
         </div>
       </section>
 
@@ -67,7 +75,7 @@ export default function ConfidentielPage() {
         <div className="mx-auto max-w-6xl px-4 text-center sm:px-6">
           <h2 className="text-2xl font-semibold text-white">Utilisé sur des millions de postes</h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70">
-            La flexibilité et l'évolutivité de MSM-CONFIDENTIEL® permettent de répondre aux besoins
+            La flexibilité et l&apos;évolutivité de MSM-CONFIDENTIEL® permettent de répondre aux besoins
             les plus exigeants des entreprises à mission critique en temps réel.
           </p>
         </div>
