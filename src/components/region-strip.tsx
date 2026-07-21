@@ -25,7 +25,7 @@ export function RegionStrip({
         </div>
       </div>
 
-      <div className="mt-10 overflow-x-auto pb-2 [scrollbar-width:thin]">
+      <div className="mt-10 overflow-x-auto pb-2 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
         <div className="mx-auto flex w-max max-w-none gap-4 px-4 sm:px-6 lg:mx-auto lg:max-w-6xl lg:px-6">
           {regions.map((region) => (
             <figure

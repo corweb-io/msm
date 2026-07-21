@@ -105,28 +105,26 @@ export default function HomePage() {
           <div className="mt-12 grid gap-5 lg:grid-cols-12">
             <Link
               href={solutionCards[0].href}
-              className="group relative col-span-full overflow-hidden rounded-2xl border border-msm-border lg:col-span-7"
+              className="group relative col-span-full min-h-[280px] overflow-hidden rounded-2xl border border-msm-border sm:min-h-[320px] lg:col-span-7 lg:h-full lg:min-h-full"
             >
-              <div className="relative min-h-[280px] sm:min-h-[320px]">
-                <Image
-                  src={solutionCards[0].image}
-                  alt={solutionCards[0].imageAlt}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 58vw"
-                  className="object-cover transition duration-700 group-hover:scale-[1.03]"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-msm-navy via-msm-navy/55 to-msm-navy/15" />
-                <div className="absolute inset-0 flex flex-col justify-end p-8">
-                  <FeaturedIcon className="h-8 w-8 text-msm-gold" />
-                  <h3 className="mt-4 text-2xl font-semibold text-white">{solutionCards[0].title}</h3>
-                  <p className="mt-2 max-w-md text-sm leading-relaxed text-white/75">
-                    {solutionCards[0].description}
-                  </p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-msm-gold">
-                    En savoir plus
-                    <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
-                  </span>
-                </div>
+              <Image
+                src={solutionCards[0].image}
+                alt={solutionCards[0].imageAlt}
+                fill
+                sizes="(max-width: 1024px) 100vw, 58vw"
+                className="object-cover transition duration-700 group-hover:scale-[1.03]"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-msm-navy via-msm-navy/55 to-msm-navy/15" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8">
+                <FeaturedIcon className="h-8 w-8 text-msm-gold" />
+                <h3 className="mt-4 text-2xl font-semibold text-white">{solutionCards[0].title}</h3>
+                <p className="mt-2 max-w-md text-sm leading-relaxed text-white/75">
+                  {solutionCards[0].description}
+                </p>
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-msm-gold">
+                  En savoir plus
+                  <ArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
+                </span>
               </div>
             </Link>
 
